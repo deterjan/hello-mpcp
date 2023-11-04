@@ -82,7 +82,7 @@ class MPCP {
             let finalPiece = this.tiles[this.tiles.length-1]
             this.candidates = [finalPiece]
         } else {
-            this.candidates = this.tiles.filter((c, idx) => {
+            this.candidates = this.tiles.filter(c => {
                 let same = true;
                 c.top.forEach((c, idx) => {
                     if (c !== target[idx]) same = false;
@@ -112,7 +112,7 @@ class MPCP {
     }
 
     step() {
-        if (mpcp.bottom.join('').endsWith('#') && !mpcp.tm.done())
+        if (mpcp.bottom.join('').endsWith('#'))
             mpcp.tm.step()
 
         if (this.done()) return;

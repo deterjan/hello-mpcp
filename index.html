@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Skeleton example</title>
     <style>
 
-      body {
-        margin: 20px
-      }
-      table, th, td {
-        border: 1px solid;
-      }
+        body {
+            margin: 20px;
+        }
 
-      td {
-        width: 20px;
-        height: 20px;
-        text-align: center;
-      }
+        table, th, td {
+            border: 1px solid;
+        }
 
-      tr {
-        background: white
-      }
+        td {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
 
-      table {
-        margin: 10px;
-      }
+        tr {
+            background: white
+        }
 
-      #tableContainer {
-        width: 50%;
-        overflow: scroll;
-      }
+        table {
+            margin: 10px;
+        }
+
+        #tableContainer {
+            width: 80%;
+            overflow: scroll;
+        }
+
+        #everything {}
     </style>
-  </head>
+</head>
 
-  <body>
-    <h3>hello mpcp</h3>
-    <p>simulating TM from Sipser p171</p>
-    <table><tr id="tm"></tr></table>
-    <div id='tableContainer'><table id="tc"><tr id="mpcptop"></tr> <tr id="mpcpbottom"></tr></table></div>
-    <button onclick="stepButton()">STEP</button>
-    <button onclick="runButton(150,150)">RUN</button>
-    <button onclick="runButton(0,0)">FF</button>
-    <button onclick="window.location.reload();">RESET</button>
-    <p id="mpcpsteps">steps: 0</p>
+<body>
+<h3>hello mpcp</h3>
+<p>simulating TM from Sipser p171</p>
+
+<div id="everything">
+    <table>
+        <tr id="tm"></tr>
+    </table>
+    <div id='tableContainer'>
+        <table id="tc">
+            <tr id="mpcptop"></tr>
+            <tr id="mpcpbottom"></tr>
+        </table>
+    </div>
+    <div>
+        <p id="mpcpsteps">steps: 0</p>
+        <button onclick="stepButton()">STEP</button>
+        <button onclick="runButton(150,150)">RUN</button>
+        <button onclick="runButton(0,0)">FF</button>
+        <button onclick="window.location.reload();">RESET</button>
+    </div>
+</div>
+
+<div>
     <h3>tiles</h3>
-    <div id="tiles" style="display: flex; flex-wrap: wrap; width: 50%"></div>
-  </body>
+    <div id="tiles" style="display: flex; flex-wrap: wrap; width: 40%"></div>
+</div>
+</body>
 
-  <script defer type="text/javascript" src="./tile.js"></script>
-  <script defer type="text/javascript" src="./tm.js"></script>
-  <script defer type="text/javascript" src="./mpcp.js"></script>
-  <script defer type="text/javascript" src="./main.js"></script>
+<script defer type="text/javascript" src="./tile.js"></script>
+<script defer type="text/javascript" src="./tm.js"></script>
+<script defer type="text/javascript" src="./mpcp.js"></script>
+<script defer type="text/javascript" src="./main.js"></script>
 
 </html>

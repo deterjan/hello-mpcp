@@ -21,10 +21,6 @@ class Tape {
     read() {
         return this.content[this.head];
     }
-
-    display() {
-        let ncontent = JSON.parse(JSON.stringify(this.content));
-    }
 }
 
 class SingleTapeTM {
