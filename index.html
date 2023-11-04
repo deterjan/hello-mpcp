@@ -1,56 +1,113 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>hello mpcp</title>
-    <style>
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
 
-      body {
-        margin: 20px
-      }
-      table, th, td {
-        border: 1px solid;
-      }
+const q = ['q1', 'q2', 'q3', 'q4', 'q5', 'qa', 'qr'];
+const tapeAlphabet = ['0', 'x', '_'];
+const blankSymbol = '_';
+const startState = 'q1';
+const qAccept = 'qa';
+const qReject = 'qr';
 
-      td {
-        width: 20px;
-        height: 20px;
-        text-align: center;
-      }
+const delta = {
+    'q1': {
+        '0': ['_', 'R', 'q2'],
+        '_': ['_', 'R', 'qr'],
+        'x': ['x', 'R', 'qr']
+    },
 
-      tr {
-        background: white
-      }
+    'q2': {
+        '0': ['x', 'R', 'q3'],
+        '_': ['_', 'R', 'qa'],
+        'x': ['x', 'R', 'q2']
+    },
 
-      table {
-        margin: 10px;
-      }
+    'q3': {
+        '0': ['0', 'R', 'q4'],
+        '_': ['_', 'L', 'q5'],
+        'x': ['x', 'R', 'q3']
+    },
 
-      #tableContainer {
-        width: 50%;
-        overflow: scroll;
-      }
-    </style>
-  </head>
+    'q4': {
+        '0': ['x', 'R', 'q3'],
+        '_': ['_', 'R', 'qr'],
+        'x': ['x', 'R', 'q4']
+    },
 
-  <body>
-    <h3>hello mpcp</h3>
-    <p>simulating TM from Sipser p171</p>
-    <table><tr id="tm"></tr></table>
-    <div id='tableContainer'><table id="tc"><tr id="mpcptop"></tr> <tr id="mpcpbottom"></tr></table></div>
-    <button onclick="stepButton()">STEP</button>
-    <button onclick="runButton(150,150)">RUN</button>
-    <button onclick="runButton(0,0)">FF</button>
-    <button onclick="window.location.reload();">RESET</button>
-    <p id="mpcpsteps">steps: 0</p>
-    <h3>tiles</h3>
-    <div id="tiles" style="display: flex; flex-wrap: wrap; width: 50%"></div>
-  </body>
+    'q5': {
+        '0': ['0', 'L', 'q5'],
+        '_': ['_', 'R', 'q2'],
+        'x': ['x', 'L', 'q5']
+    }
+}
 
-  <script defer type="text/javascript" src="./tile.js"></script>
-  <script defer type="text/javascript" src="./tm.js"></script>
-  <script defer type="text/javascript" src="./mpcp.js"></script>
-  <script defer type="text/javascript" src="./main.js"></script>
+function displayTable(tableId, content, head) {
+    let row = document.getElementById(tableId)
 
-</html>
+    row.innerText = ''
+    content.forEach((x, i) => {
+        let td = document.createElement('td');
+        td.innerText = x
+        if (i === head) {
+            td.style.backgroundColor = 'green'
+        }
+
+        row.appendChild(td)
+    });
+}
+
+let main = new SingleTapeTM(
+    q,
+    tapeAlphabet,
+    blankSymbol,
+    startState,
+    qAccept,
+    qReject,
+    ['0', '0', '0', '0',blankSymbol,blankSymbol],
+    delta
+);
+
+let mpcp = new MPCP(main, blankSymbol);
+
+displayTable('tm', main.tape.content, main.tape.head)
+displayTable('mpcptop', mpcp.top)
+displayTable('mpcpbottom', mpcp.bottom)
+
+function scrollTableRight() {
+    let tableElem = document.getElementById('tableContainer')
+    tableElem.scrollTo({
+        top: 0,
+        left: tableElem.scrollWidth,
+        behavior: "smooth",
+    });
+}
+
+function redraw() {
+    document.getElementById('mpcpsteps').innerText = `steps: ${mpcp.stepsSoFar}`
+    displayTable('tm', main.tape.content, main.tape.head)
+    displayTable('mpcptop', mpcp.top)
+    displayTable('mpcpbottom', mpcp.bottom)
+
+    mpcp.highlightCandidateTiles(mpcp.candidates, 'orange')
+
+    scrollTableRight()
+}
+
+function stepButton() {
+    mpcp.step();
+}
+
+async function runButton(t1, t2) {
+    while (!mpcp.done()) {
+        stepButton()
+        mpcp.highlightCandidateTiles(mpcp.candidates, 'orange')
+        await sleep(t1)
+        mpcp.highlightCandidateTiles([mpcp.candidate], 'green')
+        await sleep(t2)
+    }
+}
+mpcp.displayTiles()
+mpcp.findCandidates()
+mpcp.highlightCandidateTiles(mpcp.candidates, 'orange')
+
+// while(true) m.step()
