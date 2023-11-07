@@ -112,8 +112,10 @@ class MPCP {
     }
 
     step() {
-        if (mpcp.bottom.join('').endsWith('#'))
+        if (mpcp.bottom.join('').endsWith('#')) {
             mpcp.tm.step()
+            updateDiagram(main.state)
+        }
 
         if (this.done()) return;
         this.findCandidates();

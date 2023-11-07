@@ -33,7 +33,8 @@
             overflow: scroll;
         }
 
-        #everything {}
+        #everything {
+        }
     </style>
 </head>
 
@@ -60,15 +61,277 @@
     </div>
 </div>
 
-<div>
-    <h3>tiles</h3>
-    <div id="tiles" style="display: flex; flex-wrap: wrap; width: 40%"></div>
+<div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: flex-start;">
+    <div style="width: 30%">
+        <h3>tiles</h3>
+        <div id="tiles" style="display: flex; flex-wrap: wrap; width: 100%"></div>
+    </div>
+
+    <svg width="628pt" height="266pt"
+         viewBox="0.00 0.00 627.62 266.00" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 262)">
+            <title>state transitions</title>
+            <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-262 623.624,-262 623.624,4 -4,4"/>
+            <!-- q1 -->
+            <g id="q1" class="node state regular">
+                <title>q1</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="619.624,-66 563.624,-66 563.624,-30 619.624,-30 619.624,-66"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M575.9573,-31C575.9573,-31 607.2907,-31 607.2907,-31 612.9573,-31 618.624,-36.6667 618.624,-42.3333 618.624,-42.3333 618.624,-53.6667 618.624,-53.6667 618.624,-59.3333 612.9573,-65 607.2907,-65 607.2907,-65 575.9573,-65 575.9573,-65 570.2907,-65 564.624,-59.3333 564.624,-53.6667 564.624,-53.6667 564.624,-42.3333 564.624,-42.3333 564.624,-36.6667 570.2907,-31 575.9573,-31"/>
+                <text text-anchor="start" x="584.9532" y="-44.2" font-family="Helvetica,sans-Serif"
+                      font-size="12.00"
+                      fill="#000000">q1
+                </text>
+            </g>
+            <!-- q2 -->
+            <g id="q2" class="node state regular">
+                <title>q2</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="478.718,-146 422.718,-146 422.718,-110 478.718,-110 478.718,-146"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M435.0513,-111C435.0513,-111 466.3847,-111 466.3847,-111 472.0513,-111 477.718,-116.6667 477.718,-122.3333 477.718,-122.3333 477.718,-133.6667 477.718,-133.6667 477.718,-139.3333 472.0513,-145 466.3847,-145 466.3847,-145 435.0513,-145 435.0513,-145 429.3847,-145 423.718,-139.3333 423.718,-133.6667 423.718,-133.6667 423.718,-122.3333 423.718,-122.3333 423.718,-116.6667 429.3847,-111 435.0513,-111"/>
+                <text text-anchor="start" x="444.0472" y="-124.2" font-family="Helvetica,sans-Serif"
+                      font-size="12.00"
+                      fill="#000000">q2
+                </text>
+            </g>
+            <!-- q1&#45;&gt;q2 -->
+            <g id="edge1" class="edge transition">
+                <title>q1&#45;&gt;q2</title>
+                <path fill="none" stroke="#000000"
+                      d="M563.4482,-63.9969C541.6566,-76.3692 511.3017,-93.6033 487.58,-107.0714"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="485.813,-104.0498 478.8449,-112.0308 489.2692,-110.1371 485.813,-104.0498"/>
+                <text text-anchor="start" x="496.718" y="-102" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">0, → _, R &#160;&#160;
+                </text>
+            </g>
+            <!-- qr -->
+            <g id="qr" class="node state regular">
+                <title>qr</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="56,-66 0,-66 0,-30 56,-30 56,-66"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M12.3333,-31C12.3333,-31 43.6667,-31 43.6667,-31 49.3333,-31 55,-36.6667 55,-42.3333 55,-42.3333 55,-53.6667 55,-53.6667 55,-59.3333 49.3333,-65 43.6667,-65 43.6667,-65 12.3333,-65 12.3333,-65 6.6667,-65 1,-59.3333 1,-53.6667 1,-53.6667 1,-42.3333 1,-42.3333 1,-36.6667 6.6667,-31 12.3333,-31"/>
+                <text text-anchor="start" x="22.6672" y="-44.2" font-family="Helvetica,sans-Serif" font-size="12.00"
+                      fill="#000000">qr
+                </text>
+            </g>
+            <!-- q1&#45;&gt;qr -->
+            <g id="edge2" class="edge transition">
+                <title>q1&#45;&gt;qr</title>
+                <path fill="none" stroke="#000000"
+                      d="M563.5529,-48C535.1148,-48 489.8586,-48 450.718,-48 450.718,-48 450.718,-48 168.906,-48 134.1993,-48 94.6841,-48 66.3497,-48"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="66.0712,-44.5001 56.0711,-48 66.0711,-51.5001 66.0712,-44.5001"/>
+                <text text-anchor="start" x="285.359" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">_, → _, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q1&#45;&gt;qr -->
+            <g id="edge3" class="edge transition">
+                <title>q1&#45;&gt;qr</title>
+                <path fill="none" stroke="#000000"
+                      d="M563.4375,-32.283C535.6543,-18.2842 491.5504,0 450.718,0 450.718,0 450.718,0 168.906,0 132.3802,0 93.2365,-14.6307 65.4989,-27.7372"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="63.6376,-24.751 56.1865,-32.283 66.7083,-31.0415 63.6376,-24.751"/>
+                <text text-anchor="start" x="285.918" y="-3" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">x, → x, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q2&#45;&gt;q2 -->
+            <g id="edge6" class="edge transition">
+                <title>q2&#45;&gt;q2</title>
+                <path fill="none" stroke="#000000"
+                      d="M463.3816,-146.1527C465.3298,-155.5391 461.1086,-164 450.718,-164 444.3862,-164 440.3454,-160.8581 438.5955,-156.2796"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="442.083,-155.9517 438.0544,-146.1527 435.093,-156.3252 442.083,-155.9517"/>
+                <text text-anchor="start" x="426.824" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">x, → x, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q3 -->
+            <g id="q3" class="node state regular">
+                <title>q3</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="337.812,-216 281.812,-216 281.812,-180 337.812,-180 337.812,-216"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M294.1453,-181C294.1453,-181 325.4787,-181 325.4787,-181 331.1453,-181 336.812,-186.6667 336.812,-192.3333 336.812,-192.3333 336.812,-203.6667 336.812,-203.6667 336.812,-209.3333 331.1453,-215 325.4787,-215 325.4787,-215 294.1453,-215 294.1453,-215 288.4787,-215 282.812,-209.3333 282.812,-203.6667 282.812,-203.6667 282.812,-192.3333 282.812,-192.3333 282.812,-186.6667 288.4787,-181 294.1453,-181"/>
+                <text text-anchor="start" x="303.1412" y="-194.2" font-family="Helvetica,sans-Serif"
+                      font-size="12.00"
+                      fill="#000000">q3
+                </text>
+            </g>
+            <!-- q2&#45;&gt;q3 -->
+            <g id="edge4" class="edge transition">
+                <title>q2&#45;&gt;q3</title>
+                <path fill="none" stroke="#000000"
+                      d="M422.6937,-144.312C416.8032,-147.6072 410.5939,-150.9835 404.718,-154 386.0419,-163.5878 364.8816,-173.488 347.2884,-181.4638"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="345.6009,-178.3852 337.9199,-185.6826 348.4752,-184.7679 345.6009,-178.3852"/>
+                <text text-anchor="start" x="356.0915" y="-180" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">0, → x, R &#160;&#160;
+                </text>
+            </g>
+            <!-- qa -->
+            <g id="qa" class="node state regular">
+                <title>qa</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="337.812,-162 281.812,-162 281.812,-126 337.812,-126 337.812,-162"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M294.1453,-127C294.1453,-127 325.4787,-127 325.4787,-127 331.1453,-127 336.812,-132.6667 336.812,-138.3333 336.812,-138.3333 336.812,-149.6667 336.812,-149.6667 336.812,-155.3333 331.1453,-161 325.4787,-161 325.4787,-161 294.1453,-161 294.1453,-161 288.4787,-161 282.812,-155.3333 282.812,-149.6667 282.812,-149.6667 282.812,-138.3333 282.812,-138.3333 282.812,-132.6667 288.4787,-127 294.1453,-127"/>
+                <text text-anchor="start" x="303.1412" y="-140.2" font-family="Helvetica,sans-Serif"
+                      font-size="12.00"
+                      fill="#000000">qa
+                </text>
+            </g>
+            <!-- q2&#45;&gt;qa -->
+            <g id="edge5" class="edge transition">
+                <title>q2&#45;&gt;qa</title>
+                <path fill="none" stroke="#000000"
+                      d="M422.5422,-131.1994C401.1346,-133.6302 371.4628,-136.9995 347.9342,-139.6712"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="347.4802,-136.2002 337.9389,-140.8062 348.27,-143.1555 347.4802,-136.2002"/>
+                <text text-anchor="start" x="355.812" y="-141" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">_, → _, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q3&#45;&gt;q3 -->
+            <g id="edge9" class="edge transition">
+                <title>q3&#45;&gt;q3</title>
+                <path fill="none" stroke="#000000"
+                      d="M322.4756,-216.1527C324.4238,-225.5391 320.2026,-234 309.812,-234 303.4802,-234 299.4394,-230.8581 297.6895,-226.2796"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="301.177,-225.9517 297.1484,-216.1527 294.187,-226.3252 301.177,-225.9517"/>
+                <text text-anchor="start" x="285.918" y="-237" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">x, → x, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q4 -->
+            <g id="q4" class="node state regular">
+                <title>q4</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="196.906,-228 140.906,-228 140.906,-192 196.906,-192 196.906,-228"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M153.2393,-193C153.2393,-193 184.5727,-193 184.5727,-193 190.2393,-193 195.906,-198.6667 195.906,-204.3333 195.906,-204.3333 195.906,-215.6667 195.906,-215.6667 195.906,-221.3333 190.2393,-227 184.5727,-227 184.5727,-227 153.2393,-227 153.2393,-227 147.5727,-227 141.906,-221.3333 141.906,-215.6667 141.906,-215.6667 141.906,-204.3333 141.906,-204.3333 141.906,-198.6667 147.5727,-193 153.2393,-193"/>
+                <text text-anchor="start" x="162.2352" y="-206.2" font-family="Helvetica,sans-Serif"
+                      font-size="12.00"
+                      fill="#000000">q4
+                </text>
+            </g>
+            <!-- q3&#45;&gt;q4 -->
+            <g id="edge7" class="edge transition">
+                <title>q3&#45;&gt;q4</title>
+                <path fill="none" stroke="#000000"
+                      d="M281.6362,-200.3995C260.2286,-202.2227 230.5568,-204.7496 207.0282,-206.7534"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="206.6998,-203.2686 197.0329,-207.6046 207.2939,-210.2433 206.6998,-203.2686"/>
+                <text text-anchor="start" x="214.906" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">0, → 0, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q5 -->
+            <g id="q5" class="node state regular">
+                <title>q5</title>
+                <polygon fill="#ffffff" fill-opacity="0.003922" stroke="transparent" stroke-width="2"
+                         points="196.906,-114 140.906,-114 140.906,-78 196.906,-78 196.906,-114"/>
+                <path fill="none" stroke="#000000" stroke-width="2"
+                      d="M153.2393,-79C153.2393,-79 184.5727,-79 184.5727,-79 190.2393,-79 195.906,-84.6667 195.906,-90.3333 195.906,-90.3333 195.906,-101.6667 195.906,-101.6667 195.906,-107.3333 190.2393,-113 184.5727,-113 184.5727,-113 153.2393,-113 153.2393,-113 147.5727,-113 141.906,-107.3333 141.906,-101.6667 141.906,-101.6667 141.906,-90.3333 141.906,-90.3333 141.906,-84.6667 147.5727,-79 153.2393,-79"/>
+                <text text-anchor="start" x="162.2352" y="-92.2" font-family="Helvetica,sans-Serif"
+                      font-size="12.00"
+                      fill="#000000">q5
+                </text>
+            </g>
+            <!-- q3&#45;&gt;q5 -->
+            <g id="edge8" class="edge transition">
+                <title>q3&#45;&gt;q5</title>
+                <path fill="none" stroke="#000000"
+                      d="M284.9452,-179.9992C261.9469,-163.3511 227.591,-138.4813 202.2261,-120.12"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="204.1509,-117.1926 193.9982,-114.1639 200.0463,-122.8628 204.1509,-117.1926"/>
+                <text text-anchor="start" x="215.736" y="-165" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">_, → _, L &#160;&#160;
+                </text>
+            </g>
+            <!-- q4&#45;&gt;qr -->
+            <g id="edge11" class="edge transition">
+                <title>q4&#45;&gt;qr</title>
+                <path fill="none" stroke="#000000"
+                      d="M149.6564,-191.9675C146.6734,-189.0226 143.668,-185.9645 140.906,-183 107.1195,-146.7359 70.8162,-102.2234 48.7521,-74.4773"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="51.3329,-72.0985 42.3804,-66.4324 45.8455,-76.4446 51.3329,-72.0985"/>
+                <text text-anchor="start" x="74" y="-164" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">_, → _, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q4&#45;&gt;q3 -->
+            <g id="edge10" class="edge transition">
+                <title>q4&#45;&gt;q3</title>
+                <path fill="none" stroke="#000000"
+                      d="M197.2683,-192.5404C202.9227,-189.8357 208.957,-187.4586 214.906,-186 233.3788,-181.4707 254.3171,-183.3954 271.8181,-186.906"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="271.1568,-190.3446 281.6806,-189.1195 272.6897,-183.5145 271.1568,-190.3446"/>
+                <text text-anchor="start" x="215.1855" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">0, → x, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q4&#45;&gt;q4 -->
+            <g id="edge12" class="edge transition">
+                <title>q4&#45;&gt;q4</title>
+                <path fill="none" stroke="#000000"
+                      d="M181.5696,-228.1527C183.5178,-237.5391 179.2966,-246 168.906,-246 162.5742,-246 158.5334,-242.8581 156.7835,-238.2796"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="160.271,-237.9517 156.2424,-228.1527 153.281,-238.3252 160.271,-237.9517"/>
+                <text text-anchor="start" x="145.012" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">x, → x, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q5&#45;&gt;q2 -->
+            <g id="edge14" class="edge transition">
+                <title>q5&#45;&gt;q2</title>
+                <path fill="none" stroke="#000000"
+                      d="M197.1133,-96.2323C230.7424,-96.8021 288.5845,-98.7094 337.812,-105 362.9932,-108.2178 390.9536,-113.8972 412.75,-118.807"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="412.077,-122.2434 422.6065,-121.069 413.6428,-115.4208 412.077,-122.2434"/>
+                <text text-anchor="start" x="285.359" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">_, → _, R &#160;&#160;
+                </text>
+            </g>
+            <!-- q5&#45;&gt;q5 -->
+            <g id="edge13" class="edge transition">
+                <title>q5&#45;&gt;q5</title>
+                <path fill="none" stroke="#000000"
+                      d="M175.2378,-114.1527C176.2119,-123.5391 174.1013,-132 168.906,-132 165.7401,-132 163.7197,-128.8581 162.8447,-124.2796"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="166.3401,-124.0556 162.5742,-114.1527 159.3426,-124.2426 166.3401,-124.0556"/>
+                <text text-anchor="start" x="145.283" y="-135" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">0, → 0, L &#160;&#160;
+                </text>
+            </g>
+            <!-- q5&#45;&gt;q5 -->
+            <g id="edge15" class="edge transition">
+                <title>q5&#45;&gt;q5</title>
+                <path fill="none" stroke="#000000"
+                      d="M179.5188,-114.2576C185.0217,-131.4023 181.4841,-150 168.906,-150 158.7845,-150 154.517,-137.9576 156.1034,-124.3202"/>
+                <polygon fill="#000000" stroke="#000000"
+                         points="159.5867,-124.7732 158.2932,-114.2576 152.7468,-123.2847 159.5867,-124.7732"/>
+                <text text-anchor="start" x="145.842" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00"
+                      fill="#000000">x, → x, L &#160;&#160;
+                </text>
+            </g>
+        </g>
+    </svg>
 </div>
+
+
 </body>
 
-<script defer type="text/javascript" src="./tile.js"></script>
-<script defer type="text/javascript" src="./tm.js"></script>
-<script defer type="text/javascript" src="./mpcp.js"></script>
-<script defer type="text/javascript" src="./main.js"></script>
+<script type="text/javascript" src="./tile.js"></script>
+<script type="text/javascript" src="./tm.js"></script>
+<script type="text/javascript" src="./mpcp.js"></script>
+<script type="text/javascript" src="./main.js"></script>
+<script type="text/javascript" src="./ccNetViz.js"></script>
 
 </html>

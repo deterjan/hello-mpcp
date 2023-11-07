@@ -97,6 +97,15 @@ function stepButton() {
     mpcp.step();
 }
 
+function updateDiagram(state) {
+    let qs = document.querySelectorAll("[id^=\'q\']")
+    qs.forEach(q => {
+        q.children[2].setAttribute('fill', 'white')
+    })
+
+    document.getElementById(state).children[2].setAttribute('fill', 'green')
+}
+
 async function runButton(t1, t2) {
     while (!mpcp.done()) {
         stepButton()
