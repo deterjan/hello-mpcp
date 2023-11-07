@@ -118,5 +118,4 @@ async function runButton(t1, t2) {
 mpcp.displayTiles()
 mpcp.findCandidates()
 mpcp.highlightCandidateTiles(mpcp.candidates, 'orange')
-
-// while(true) m.step()
+updateDiagram('q1')
