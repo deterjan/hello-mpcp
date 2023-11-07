@@ -153,7 +153,7 @@ class MPCP {
             });
 
             div.appendChild(table)
-            table.addEventListener("click", () => {
+            /*table.addEventListener("click", () => {
                 if (this.done()) return;
 
                 if (mpcp.bottom.join('').endsWith('#'))
@@ -166,7 +166,7 @@ class MPCP {
                 this.findCandidates()
                 this.decideCandidate()
                 redraw()
-            }, true);
+            }, true);*/
         });
     }
 
