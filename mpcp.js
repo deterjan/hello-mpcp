@@ -94,7 +94,6 @@ class MPCP {
 
     decideCandidate() {
         if (this.bottom.join('').endsWith('#qa#') && !this.bottom.join('').endsWith('#qa')) {
-            console.log('bonk')
             let finalPiece =this.tiles[this.tiles.length-1]
             this.candidates = [finalPiece]
             this.candidate = finalPiece
@@ -112,11 +111,6 @@ class MPCP {
     }
 
     step() {
-        if (mpcp.bottom.join('').endsWith('#')) {
-            mpcp.tm.step()
-            updateDiagram(main.state)
-        }
-
         if (this.done()) return;
         this.findCandidates();
         this.decideCandidate();
@@ -124,6 +118,14 @@ class MPCP {
         this.top.push(...this.candidate.top)
         this.bottom.push(...this.candidate.bottom)
         this.stepsSoFar++;
+
+        let cs = this.bottom.join('')
+        if (cs.endsWith('#')) {
+            mpcp.tm.step()
+            let lastQIdx = cs.lastIndexOf('q')
+            updateDiagram(cs[lastQIdx] + cs[lastQIdx + 1])
+        }
+
         redraw()
     }
 
@@ -171,7 +173,6 @@ class MPCP {
     }
 
     highlightCandidateTiles(can, color) {
-        console.log(can)
         this.tiles.forEach(t => {
             document.getElementById('' + t.idx).style = "color: reset;"
         });
