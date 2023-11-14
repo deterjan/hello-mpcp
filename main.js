@@ -83,7 +83,7 @@ function scrollTableRight() {
 }
 
 function redraw() {
-    document.getElementById('mpcpsteps').innerText = `steps: ${mpcp.stepsSoFar}`
+    document.getElementById('mpcpsteps').innerText = `steps: ${mpcp.stepsSoFar} / 140`
     displayTable('tm', main.tape.content, main.tape.head)
     displayTable('mpcptop', mpcp.top)
     displayTable('mpcpbottom', mpcp.bottom)
